@@ -1,8 +1,6 @@
+properties([pipelineTriggers([pollSCM('H/30 * * * *')])])
 pipeline {
     agent any
-    triggers {
-        cron('H/30 * * * *') // Runs the pipeline every 30 minutes
-    }
     
     stages {
         stage('Build') {
